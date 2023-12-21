@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+.profils {
+  width: 100%;
+  height: 100vh;
+}
+.profils .body-profils {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.profils .body-profils .selection {
+  width: 90vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.profils .body-profils .selection .utilisateur {
+  width: 20vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.profils .body-profils .selection .utilisateur a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profils .body-profils .selection .utilisateur a img {
+  width: 70%;
+  height: auto;
+  border-radius: 50%;
+  border-color: red;
+  background-color: aqua;
+}
+
+.page-dashboard {
+  width: 100%;
+  height: 100vh;
+}
+.page-dashboard .body-dashboard {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.page-dashboard .body-dashboard .section-dashboard {
+  width: 100%;
+  height: 100%;
+  padding: 5% 1% 0% 10%;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart {
+  width: 80%;
+  height: 100%;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-lineChart {
+  width: 100%;
+  height: 50%;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph .zoneChart {
+  width: 31%;
+  height: 100%;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details {
+  background-color: white;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories {
+  background-color: #FBFBFB;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories img {
+  color: white;
+  width: 20%;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories .calories-infos {
+  margin-left: 20px;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories .calories-infos p {
+  margin: 0;
+  padding: 0;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories .calories-infos p:first-child {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+header {
+  background-color: #000;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+header img {
+  margin: 10px;
+}
+header nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+header nav ul {
+  width: 90% !important;
+  display: flex !important;
+  justify-content: space-between;
+  margin: 0;
+}
+header nav ul li {
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar {
+  background-color: black;
+  position: fixed;
+  width: 5vw;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .sidebar_icons {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar .sidebar_icons img {
+  width: 80%;
+  margin: 10px;
+}
+
+.testRechart {
+  width: 80%;
+  height: 50vh;
+  margin-top: 90px;
+  margin-top: 50px;
+}
+
+.lineChartPerso {
+  width: 40%;
+  height: 50vh;
+  margin-top: 0px;
+  padding: 0px 15px 0px 0px;
+  border-radius: 10px;
+}
+.lineChartPerso h2 {
+  padding: 0px;
+  height: 10px;
+}
+
+.radarChartPerso {
+  background-color: green;
+  width: 40%;
+  height: 50vh;
+  border-radius: 10px;
+}
+
+.pieChartPerso {
+  width: 40%;
+  height: 50vh;
+}
+
+.switchbutton {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15%;
+  left: 10vw;
+}
+
+.onoffswitch {
+  position: relative;
+  width: 127px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px;
+}
+
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+  content: "API";
+  padding-left: 10px;
+  background-color: #34A7C1;
+  color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+  content: "DataMocked";
+  padding-right: 10px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right;
+}
+
+.onoffswitch-switch {
+  display: block;
+  width: 18px;
+  margin: 9px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 87px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+body .app {
+  position: relative;
+  margin: 0;
+  background-color: blueviolet !important;
+  min-width: 1024px;
+  min-height: 780px;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=styles.css.map */

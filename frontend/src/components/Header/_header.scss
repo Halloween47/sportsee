@@ -1,0 +1,36 @@
+header {
+    background-color: #000;
+    position: fixed;
+    z-index: 2;
+    width: 100%;height: auto;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+
+    img {
+        margin: 10px;
+    }
+    
+    nav {
+        // background-color: blue;
+        width: 100%;
+        display: flex; align-items: center;
+        ul {
+            // background-color: red;
+            width: 90% !important;
+            display: flex !important; justify-content: space-between; 
+            margin: 0;
+            li {
+                color: #fff;
+                margin: 0;
+                padding: 20px;
+                list-style: none;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
