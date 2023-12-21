@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// @import '../pages/Profils/profils';
+// @import '../pages/Dashboard/dashboard';
+
+// @import '../components/Header/header';
+// @import '../components/Sidebar/sidebar';
+// @import '../components/Recharts/testRecharts';
+
+@import './pages/Profils/profils';
+@import './pages/Dashboard/dashboard';
+
+@import './components/Header/header';
+@import './components/Sidebar/sidebar';
+@import './components/Recharts/SimpleBarChart/simpleBarChart';
+@import './components/Recharts/LineChart/lineChartPerso';
+@import './components/Recharts/RadarChart/radarChartPerso';
+@import './components/Recharts/PieChart/pieChartPerso';
+@import './components/Recharts/KeyData/keydata';
+@import './components/SwitchButton/switchbutton';
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  .app {
+    position: relative;
+    margin: 0;
+    background-color: blueviolet !important;
+    min-width: 1024px;
+    min-height: 780px;
+    height: 100vh;
+  }
+}
+

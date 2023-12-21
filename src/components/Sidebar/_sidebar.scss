@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: black;
+    position: fixed;
+    width: 5vw; height: 100%;
+    padding: 20px;
+    display: flex; align-items: center;
+
+    .sidebar_icons {
+        // background-color: yellow;
+        width: 90%; height: 60%;
+        display: flex; flex-direction: column;
+        align-items: center; 
+
+        img {
+            width: 80%;
+            margin: 10px;
+        }
+    }
+}

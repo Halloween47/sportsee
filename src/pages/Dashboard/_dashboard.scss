@@ -1,0 +1,84 @@
+.page-dashboard {
+    width: 100%; height: 100vh;
+    .body-dashboard {
+        // background-color: yellow;
+        display: flex;
+        width: 100%; height: auto;
+        .section-dashboard {
+            // background-color: orange;
+            width: 100%; height: 100%;
+            // padding: 50px 70px;
+            padding: 5% 1% 0% 10%;
+
+            .section-chart {
+                // background-color: blue;
+
+                width: 100%; height: 75vh;
+                // width: 100%; height: auto;
+                display: flex;
+
+                .zone-chart {
+                    // background-color: red;
+                    width: 80%; height: 100%;
+
+                    .zone-lineChart {
+                        // background-color: violet;
+                        width: 100%;height: 50%;
+                    }
+                    .zone-multiGraph {
+                        // background-color: orange;
+                        width: 100%;height: 50%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .zoneChart {
+                            // background-color: red;
+                            width: 31%;height: 100%;
+                        }
+                    }
+                }
+                .zone-details {
+                    // background-color: rgb(95, 14, 14);
+                    background-color: white;
+                    width: 15%; height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    .calories {
+                        // background-color: #FBFBFB;
+                        background-color: #FBFBFB;
+                        // background-color: green;
+                        width: 100%;
+                        height: 100px;
+                        // margin-top: 20px;
+                        margin-bottom: 20px;
+                        margin-left: 20px;
+    
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        img {
+                            color: white;
+                            width: 20%;
+                        }
+                        .calories-infos {
+                            margin-left: 20px;
+
+                            p {
+                                margin: 0;padding: 0;
+                            }
+                            p:first-child {
+                                font-size: 1.5rem;
+                                font-weight: 900;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        
+    }
+}
