@@ -119,7 +119,7 @@ let rightUser = dataUserMocked.find(user => user.id === idUserinteger)
 let rightSessions = dataSessionsMocked.find(user => user.userId === idUserinteger)
 let rightPerf = dataPerfMocked.find(user => user.userId === idUserinteger);
 let rightActivity = dataActivityMocked.find(user => user.userId === idUserinteger);
-console.log(rightActivity);
+console.log(rightSessions);
 
 const firstName = rightUser.userInfos.firstName;
 const calories = rightUser.keyData.calorieCount;

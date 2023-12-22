@@ -3,44 +3,6 @@ export class DataService {
 
     getActivity(userId) {
 
-      //   return (
-      //       [
-      //           {
-      //               "day": "2020-07-01",
-      //               "kilogram": 80,
-      //               "calories": 240
-      //           },
-      //           {
-      //               "day": "2020-07-02",
-      //               "kilogram": 80,
-      //               "calories": 220
-      //           },
-      //           {
-      //               "day": "2020-07-03",
-      //               "kilogram": 81,
-      //               "calories": 280
-      //           },
-      //           {
-      //               "day": "2020-07-04",
-      //               "kilogram": 81,
-      //               "calories": 290
-      //           },
-      //           {
-      //               "day": "2020-07-05",
-      //               "kilogram": 80,
-      //               "calories": 160
-      //           },
-      //           {
-      //               "day": "2020-07-06",
-      //               "kilogram": 78,
-      //               "calories": 162
-      //           },
-      //           {
-      //               "day": "2020-07-07",
-      //               "kilogram": 76,
-      //               "calories": 390
-      //           }
-      //       ])
       return ([
          {
             "userId":12,
@@ -130,31 +92,31 @@ export class DataService {
                 "userId":12,
                 "sessions":[
                    {
-                      "day":1,
+                      "day":"L",
                       "sessionLength":30
                    },
                    {
-                      "day":2,
+                      "day":"M",
                       "sessionLength":23
                    },
                    {
-                      "day":3,
+                      "day":"M",
                       "sessionLength":45
                    },
                    {
-                      "day":4,
+                      "day":"J",
                       "sessionLength":50
                    },
                    {
-                      "day":5,
+                      "day":"V",
                       "sessionLength":0
                    },
                    {
-                      "day":6,
+                      "day":"S",
                       "sessionLength":0
                    },
                    {
-                      "day":7,
+                      "day":"D",
                       "sessionLength":60
                    }
                 ]

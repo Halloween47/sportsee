@@ -22,8 +22,8 @@ const combinedData = test.map((entry, index) => ({
     return (
         <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px' }}>
             <RadarChart outerRadius={100} width={730} height={250} data={combinedData} >
-                <PolarGrid />
-                <PolarAngleAxis dataKey="name" tick={{ opacity: 1,fontWeight: 'light',fill: '#fff' }} />
+                <PolarGrid radialLines={false} />
+                <PolarAngleAxis dataKey="name" tick={{ opacity: 1,fontWeight: 'light',fill: '#fff' }}   />
                 
                 <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
                 {/* <Legend /> */}
