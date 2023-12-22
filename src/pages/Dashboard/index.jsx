@@ -109,16 +109,16 @@ function Dashboard() {
 
 let dataService = new DataService();
 
-let dataUserMocked = dataService.getUser(idUserinteger);
-let dataSessionsMocked = dataService.getSessions(idUserinteger);
-let dataPerfMocked = dataService.getPerf(idUserinteger);
-let dataActivityMocked = dataService.getActivity(idUserinteger);
-console.log(dataActivityMocked);
+let dataUser = dataService.getUser(idUserinteger);
+let dataSessions = dataService.getSessions(idUserinteger);
+let dataPerf = dataService.getPerf(idUserinteger);
+let dataActivity = dataService.getActivity(idUserinteger);
+console.log(dataActivity);
 
-let rightUser = dataUserMocked.find(user => user.id === idUserinteger)
-let rightSessions = dataSessionsMocked.find(user => user.userId === idUserinteger)
-let rightPerf = dataPerfMocked.find(user => user.userId === idUserinteger);
-let rightActivity = dataActivityMocked.find(user => user.userId === idUserinteger);
+let rightUser = dataUser.find(user => user.id === idUserinteger)
+let rightSessions = dataSessions.find(user => user.userId === idUserinteger)
+let rightPerf = dataPerf.find(user => user.userId === idUserinteger);
+let rightActivity = dataActivity.find(user => user.userId === idUserinteger);
 console.log(rightSessions);
 
 const firstName = rightUser.userInfos.firstName;
@@ -135,7 +135,7 @@ console.log(score);
         <Sidebar />
         <div className="section-dashboard">
         {/* {!dataUser ? ( */}
-        {!dataUserMocked ? (
+        {!dataUser ? (
           <>
             <Loader />
           </>
