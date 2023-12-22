@@ -3,10 +3,16 @@ import axios from "axios";
 
 export class DataService {
 
+    constructor() {
+        this.isMocked = true;
+    }
+
     async getActivity(userId) {
-        let activities = await axios.get('http://localhost:3000/datasMocked.json')
-            .then(reponse => reponse.data.activity);
-        return activities.filter(activity => activity.userId === userId);
+        if (this.isMocked) {
+            let activities = await axios.get('http://localhost:3000/datasMocked.json')
+                .then(reponse => reponse.data.activity);
+            return activities.filter(activity => activity.userId === userId);
+        }
     }
 
     /* Ton service à pour responsabilité de traiter la donnée

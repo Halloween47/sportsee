@@ -20,7 +20,7 @@ function Dashboard() {
 
     useEffect(() => {
         dataService.getActivity(idUserinteger).then(data => setActivity(data))
-    })
+    },[])
 
     return (
         <div className='page-dashboard'>
