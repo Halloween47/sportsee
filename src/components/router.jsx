@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import Profils from '../pages/Profils';
-import Dashboard from '../pages/Dashboard';
+import Profils from '../pages/profils';
+import Dashboard from '../pages/dashboard';
 // import NotFound from './components/NotFound';
 
 function AppRouter() {

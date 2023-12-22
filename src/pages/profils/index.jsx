@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 
-import Header from '../../components/Header/Header'
+import Header from '../../components/header/header'
 import Sidebar from '../../components/Sidebar/Sidebar'
 
 import Man from '../../assets/man.svg'
