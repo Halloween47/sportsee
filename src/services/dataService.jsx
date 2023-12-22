@@ -1,276 +1,233 @@
+import axios from "axios";
+
 
 export class DataService {
 
-    getActivity(userId) {
-
-      return ([
-         {
-            "userId":12,
-            "sessions":[
-               {
-                  "day":"2020-07-01",
-                  "kilogram":80,
-                  "calories":240
-               },
-               {
-                  "day":"2020-07-02",
-                  "kilogram":80,
-                  "calories":220
-               },
-               {
-                  "day":"2020-07-03",
-                  "kilogram":81,
-                  "calories":280
-               },
-               {
-                  "day":"2020-07-04",
-                  "kilogram":81,
-                  "calories":290
-               },
-               {
-                  "day":"2020-07-05",
-                  "kilogram":80,
-                  "calories":160
-               },
-               {
-                  "day":"2020-07-06",
-                  "kilogram":78,
-                  "calories":162
-               },
-               {
-                  "day":"2020-07-07",
-                  "kilogram":76,
-                  "calories":390
-               }
-            ]
-         },
-         {
-            "userId":18,
-            "sessions":[
-               {
-                  "day":"2020-07-01",
-                  "kilogram":70,
-                  "calories":240
-               },
-               {
-                  "day":"2020-07-02",
-                  "kilogram":69,
-                  "calories":220
-               },
-               {
-                  "day":"2020-07-03",
-                  "kilogram":70,
-                  "calories":280
-               },
-               {
-                  "day":"2020-07-04",
-                  "kilogram":70,
-                  "calories":500
-               },
-               {
-                  "day":"2020-07-05",
-                  "kilogram":69,
-                  "calories":160
-               },
-               {
-                  "day":"2020-07-06",
-                  "kilogram":69,
-                  "calories":162
-               },
-               {
-                  "day":"2020-07-07",
-                  "kilogram":69,
-                  "calories":390
-               }
-            ]
-         }
-      ])
+   async getAllDatas() {
+      const response = await axios.get('http://localhost:3000/datasMocked.json');
+  console.log(response.data);  
+   }
+   async getActivity(userId){
+   
+         // j'appelle le get de dataMocked (avec axios) 
+         const response = await axios.get('http://localhost:3000/datasMocked.json');
+         console.log(response.data.activity);
+         // Je fais un filter sur le userId
+         const filteredActivities = response.data.activity.filter(activity => activity.userId === userId);
+         console.log(filteredActivities);
+         // Je renvoi le résulat (return)
+         return filteredActivities;
+   }
+   /* Ton service à pour responsabilité de traiter la donnée
+   
+    chaque fonction doit être de la forme ci dessous
+   
+   
+    async nomDeLaMethode(userId){
+   
+      if(isMocked){
+   
+         // j'appelle le get de dataMocked (avec axios) 
+         // Je fais un filter sur le userId
+         // Je renvoi le résulat (return)
+   
+      } else{
+         // A FAIRE DANS UN DEXUIEME TEMPS
+         
+         // j'appelle le get du backend (avec axios)
+         // Je renvoi le résulat (return)
+   
+         j
+      }
+   
+   
     }
-    getSessions(userId) {
-        return ([
-            {
-                "userId":12,
-                "sessions":[
-                   {
-                      "day":"L",
-                      "sessionLength":30
-                   },
-                   {
-                      "day":"M",
-                      "sessionLength":23
-                   },
-                   {
-                      "day":"M",
-                      "sessionLength":45
-                   },
-                   {
-                      "day":"J",
-                      "sessionLength":50
-                   },
-                   {
-                      "day":"V",
-                      "sessionLength":0
-                   },
-                   {
-                      "day":"S",
-                      "sessionLength":0
-                   },
-                   {
-                      "day":"D",
-                      "sessionLength":60
-                   }
-                ]
-             },
-             {
-                "userId":18,
-                "sessions":[
-                   {
-                      "day":1,
-                      "sessionLength":30
-                   },
-                   {
-                      "day":2,
-                      "sessionLength":40
-                   },
-                   {
-                      "day":3,
-                      "sessionLength":50
-                   },
-                   {
-                      "day":4,
-                      "sessionLength":30
-                   },
-                   {
-                      "day":5,
-                      "sessionLength":30
-                   },
-                   {
-                      "day":6,
-                      "sessionLength":50
-                   },
-                   {
-                      "day":7,
-                      "sessionLength":50
-                   }
-                ]
-             }
-        ])
-    }
+   
+   
+    */
 
-    getPerf(userId) {
-        return ([
-            {
-                "userId":12,
-                "kind":{
-                   "1":"cardio",
-                   "2":"energy",
-                   "3":"endurance",
-                   "4":"strength",
-                   "5":"speed",
-                   "6":"intensity"
-                },
-                "data":[
-                   {
-                      "value":80,
-                      "kind":1
-                   },
-                   {
-                      "value":120,
-                      "kind":2
-                   },
-                   {
-                      "value":140,
-                      "kind":3
-                   },
-                   {
-                      "value":50,
-                      "kind":4
-                   },
-                   {
-                      "value":200,
-                      "kind":5
-                   },
-                   {
-                      "value":90,
-                      "kind":6
-                   }
-                ]
-             },
-             {
-                "userId":18,
-                "kind":{
-                   "1":"cardio",
-                   "2":"energy",
-                   "3":"endurance",
-                   "4":"strength",
-                   "5":"speed",
-                   "6":"intensity"
-                },
-                "data":[
-                   {
-                      "value":200,
-                      "kind":1
-                   },
-                   {
-                      "value":240,
-                      "kind":2
-                   },
-                   {
-                      "value":80,
-                      "kind":3
-                   },
-                   {
-                      "value":80,
-                      "kind":4
-                   },
-                   {
-                      "value":220,
-                      "kind":5
-                   },
-                   {
-                      "value":110,
-                      "kind":6
-                   }
-                ]
-             }
-        ])
+/*
+   constructor() {
+      this.isMocked = true;
+   }
 
-        
+   async getActivity(userId) {
+      if (this.isMocked) {
 
-    }
+         //trouver la bonne url
+         axios.get('/user?ID=12345')
+            .then(function (response) {
+               //stocker dans une variable
+               //response.json
+            }.filter((donnee) => donnee.id === userId))
 
-    getUser(userId) {
-        return ([
-            {
-                "id": 12,
-                "userInfos": {
-                    "firstName": "Karl",
-                    "lastName": "Dovineau",
-                    "age": 31
-                },
-                "todayScore": 0.12,
-                "keyData": {
-                    "calorieCount": 1930,
-                    "proteinCount": 155,
-                    "carbohydrateCount": 290,
-                    "lipidCount": 50
-                }
+
+         //return variable
+
+      }
+      else {
+         console.log("appel backend")
+      }
+   }
+
+*/
+   /*
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+   getSessions(userId) {
+       return 
+           {
+               "userId":12,
+               "sessions":[
+                  {
+                     "day":"L",
+                     "sessionLength":30
+                  },
+                  {
+                     "day":"M",
+                     "sessionLength":23
+                  },
+                  {
+                     "day":"M",
+                     "sessionLength":45
+                  },
+                  {
+                     "day":"J",
+                     "sessionLength":50
+                  },
+                  {
+                     "day":"V",
+                     "sessionLength":0
+                  },
+                  {
+                     "day":"S",
+                     "sessionLength":0
+                  },
+                  {
+                     "day":"D",
+                     "sessionLength":60
+                  }
+               ]
+            };
+   }
+
+   getPerf(userId) {
+       return ([
+           {
+               "userId":12,
+               "kind":{
+                  "1":"cardio",
+                  "2":"energy",
+                  "3":"endurance",
+                  "4":"strength",
+                  "5":"speed",
+                  "6":"intensity"
+               },
+               "data":[
+                  {
+                     "value":80,
+                     "kind":1
+                  },
+                  {
+                     "value":120,
+                     "kind":2
+                  },
+                  {
+                     "value":140,
+                     "kind":3
+                  },
+                  {
+                     "value":50,
+                     "kind":4
+                  },
+                  {
+                     "value":200,
+                     "kind":5
+                  },
+                  {
+                     "value":90,
+                     "kind":6
+                  }
+               ]
             },
             {
-                "id": 18,
-                "userInfos": {
-                    "firstName": "Cecilia",
-                    "lastName": "Ratorez",
-                    "age": 34,
-                },
-                "todayScore": 0.3,
-                "keyData": {
-                    "calorieCount": 2500,
-                    "proteinCount": 90,
-                    "carbohydrateCount": 150,
-                    "lipidCount": 120
-                }
+               "userId":18,
+               "kind":{
+                  "1":"cardio",
+                  "2":"energy",
+                  "3":"endurance",
+                  "4":"strength",
+                  "5":"speed",
+                  "6":"intensity"
+               },
+               "data":[
+                  {
+                     "value":200,
+                     "kind":1
+                  },
+                  {
+                     "value":240,
+                     "kind":2
+                  },
+                  {
+                     "value":80,
+                     "kind":3
+                  },
+                  {
+                     "value":80,
+                     "kind":4
+                  },
+                  {
+                     "value":220,
+                     "kind":5
+                  },
+                  {
+                     "value":110,
+                     "kind":6
+                  }
+               ]
             }
-        ])
-    }
+       ])
+
+       
+
+   }
+
+   getUser(userId) {
+       return ([
+           {
+               "id": 12,
+               "userInfos": {
+                   "firstName": "Karl",
+                   "lastName": "Dovineau",
+                   "age": 31
+               },
+               "todayScore": 0.12,
+               "keyData": {
+                   "calorieCount": 1930,
+                   "proteinCount": 155,
+                   "carbohydrateCount": 290,
+                   "lipidCount": 50
+               }
+           },
+           {
+               "id": 18,
+               "userInfos": {
+                   "firstName": "Cecilia",
+                   "lastName": "Ratorez",
+                   "age": 34,
+               },
+               "todayScore": 0.3,
+               "keyData": {
+                   "calorieCount": 2500,
+                   "proteinCount": 90,
+                   "carbohydrateCount": 150,
+                   "lipidCount": 120
+               }
+           }
+       ])
+   }
+   */
 }

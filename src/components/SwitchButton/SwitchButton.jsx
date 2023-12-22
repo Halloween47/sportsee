@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { DataService } from '../../services/dataService';
 
 
 function SwitchButton() {
     const [isChecked, setChecked] = useState(false);
 
-    let dataService = new DataService();
-    let data = dataService.getUser();
 
     const handleToggle = () => {
         setChecked(!isChecked); 
