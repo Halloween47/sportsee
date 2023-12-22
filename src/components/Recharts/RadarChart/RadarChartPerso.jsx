@@ -1,60 +1,29 @@
 import React from 'react';
-import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
-import { DataService } from '../../../services/dataService';
-
-// const data = [
-//     {
-//       subject: 'Intensité',
-//       A: 120,
-//       B: 110,
-//       fullMark: 150,
-//     },
-//     {
-//       subject: 'Vitesse',
-//       A: 98,
-//       B: 130,
-//       fullMark: 150,
-//     },
-//     {
-//       subject: 'Force',
-//       A: 86,
-//       B: 130,
-//       fullMark: 150,
-//     },
-//     {
-//       subject: 'Endurance',
-//       A: 99,
-//       B: 100,
-//       fullMark: 150,
-//     },
-//     {
-//       subject: 'Energie',
-//       A: 85,
-//       B: 90,
-//       fullMark: 150,
-//     },
-//     {
-//       subject: 'Cardio',
-//       A: 65,
-//       B: 85,
-//       fullMark: 150,
-//     },
-//   ];
-
+import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from 'recharts';
 
 function RadarChartPerso(dataPerformances) {
-//   const dataServices = new DataService();
-//   let data = dataServices.getPerf(18);
-console.log(dataPerformances);
-console.log(dataPerformances.kind);
+console.log(dataPerformances.dataPerformances.kind);
+let data = dataPerformances.dataPerformances;
+console.log(data.kind);
 
+ 
+const outputArray = Object.entries(data.kind).map(([key, value]) => ({ name: value }));
+console.log(outputArray); 
+let test = data.data.map(element => ({value: element.value, kind: element.kind}));
+console.log(test);
+
+const combinedData = test.map((entry, index) => ({
+    ...entry,
+    name: outputArray[index].name
+  }));
   
+  console.log(combinedData);
+
     return (
         <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px' }}>
-            <RadarChart outerRadius={140} width={730} height={250} data={dataPerformances} >
+            <RadarChart outerRadius={100} width={730} height={250} data={combinedData} >
                 <PolarGrid />
-                <PolarAngleAxis dataKey="kind" tick={{ opacity: 1,fontWeight: 'light' }} />
-                {/* <PolarRadiusAxis dataKey="value" cx={9} angle={90} domain={[0, 150]} tick={{display: 'none'}}/> */}
+                <PolarAngleAxis dataKey="name" tick={{ opacity: 1,fontWeight: 'light',fill: '#fff' }} />
                 
                 <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
                 {/* <Legend /> */}

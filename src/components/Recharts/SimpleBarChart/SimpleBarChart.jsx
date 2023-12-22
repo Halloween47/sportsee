@@ -1,10 +1,10 @@
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Text } from 'recharts';
-import { DataService } from '../../../services/dataService';
+// import { DataService } from '../../../services/dataService';
 // import { useParams } from 'react-router-dom';
 
-function SimpleBarChart() {
-  const dataServices = new DataService();
-  let data = dataServices.getActivity(18);
+function SimpleBarChart(props) {
+  let dataActivity = props.dataActivity
+  let data = dataActivity.sessions;
   return (
     <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#FBFBFB', borderRadius: '10px',padding: '50px' }}>
       <Text x={300} y={130} fontSize={24} textAnchor="middle">

@@ -1,22 +1,18 @@
 import { PieChart, Pie, Label, ResponsiveContainer } from 'recharts';
-import { DataService } from "../../../services/dataService";
 
-// const data = [
-//   { name: 'A', value: 12 },
-//   { name: 'B', value: 88 },
-// ];
+function PieChartPerso(props) {
+  let data = props.dataUser;
+  console.log(data);
+  let todayScore = data.todayScore * 100 + "% de votre objectif";
+    
+  console.log(todayScore);
 
-const renderLegend = () => {
-  return (
-      <h2>Durée moyenne des sessions</h2>
-  );
-}
+  let dataTab = [data];
+  console.log(dataTab); 
 
-function PieChartPerso() {
-  const dataServices = new DataService();
-  let data = dataServices.getUser(18);
-  let todayScore = data[0].todayScore + "% de votre objectif";
-  // console.log(todayScore);
+  let resultatAngle = parseInt(todayScore) * 360 / 100;
+  console.log(resultatAngle);
+
   return (
     <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "15px" }}>
 
@@ -25,15 +21,17 @@ function PieChartPerso() {
           <tspan fontSize="20" fontWeight="bold">Score</tspan>
         </text>
       <Pie
-        data={data}
+        data={dataTab}
         dataKey="todayScore"
         cx={150}
         cy={150}
         innerRadius={85}
         outerRadius={100}
         fill="#FF0000"
-        startAngle={180}
-        endAngle={100}
+        // startAngle={0}
+        // endAngle={resultatAngle}
+        startAngle={90}
+        endAngle={resultatAngle + 90}
         cornerRadius={10}
       >
         <Label value={todayScore} position="center" />
