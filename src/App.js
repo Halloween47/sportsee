@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './styles.css';
 
-import Profils from './pages/Profils';
-import Dashboard from './pages/Dashboard';
+import Profils from './pages/profils';
+import Dashboard from './pages/dashboard';
 
 
 function App() {

@@ -7,18 +7,18 @@
 // @import '../components/Sidebar/sidebar';
 // @import '../components/Recharts/testRecharts';
 
-@import './pages/Profils/profils';
-@import './pages/Dashboard/dashboard';
+@import 'pages/profils/profils';
+@import 'pages/dashboard/dashboard';
 
-@import './components/Header/header';
+@import 'components/header/header';
 @import './components/Sidebar/sidebar';
-@import './components/Recharts/SimpleBarChart/simpleBarChart';
-@import './components/Recharts/LineChart/lineChartPerso';
-@import './components/Recharts/RadarChart/radarChartPerso';
-@import './components/Recharts/PieChart/pieChartPerso';
-@import './components/Recharts/KeyData/keydata';
+@import 'components/recharts/SimpleBarChart/simpleBarChart';
+@import 'components/recharts/LineChart/lineChartPerso';
+@import 'components/recharts/RadarChart/radarChartPerso';
+@import 'components/recharts/PieChart/pieChartPerso';
+@import 'components/recharts/KeyData/keydata';
 @import './components/SwitchButton/switchbutton';
-@import './components/Loader/loader';
+@import 'components/loader/loader';
 
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
