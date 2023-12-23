@@ -7,7 +7,8 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
-    ResponsiveContainer
+    ResponsiveContainer,
+    Text
 } from 'recharts';
 
 
@@ -37,7 +38,18 @@ function SimpleBarChart(props) {
     return (
         <ResponsiveContainer width="100%" height="100%"
                              style={{backgroundColor: '#FBFBFB', borderRadius: '10px', padding: '50px'}}>
-            <BarChart
+<Text
+    angle={0}
+    content="Activité quotidienne"
+    lineHeight="1em"
+    maxLines={3}
+    textAnchor="middle"
+    verticalAnchor="end"
+    width={200}
+  >
+    Activité quotidienne
+  </Text>
+                <BarChart
                 width={500}
                 height={300}
                 data={data}
@@ -45,11 +57,12 @@ function SimpleBarChart(props) {
                     top: 0,
                     right: 200,
                     left: 20,
-                    bottom: 100,
+                    bottom: 0,
                 }}
-            >
+                >
+
                 <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#ccc"/>
-                <XAxis dataKey="day"/>
+                <XAxis dataKey="day" />
                 <YAxis orientation='right'/>
                 <Tooltip content={<CustomTooltip/>}/>
                 <Legend align="right" verticalAlign="top" height={50}/>

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 
 import Header from '../../components/header/header'
-import Sidebar from '../../components/Sidebar/Sidebar'
+import Sidebar from '../../components/sidebar/sidebar';
 
-import Man from '../../assets/man.svg'
-import Girl from '../../assets/girl.svg'
-import SwitchButton from "../../components/SwitchButton/SwitchButton";
+import Man from '../../assets/man.svg';
+import Girl from '../../assets/girl.svg';
+import SwitchButton from "../../components/switchbutton/switchbutton";
 
 function Profils() {
 

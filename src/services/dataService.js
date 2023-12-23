@@ -7,6 +7,14 @@ export class DataService {
         this.isMocked = true;
     }
 
+    async getUser(userId) {
+      if (this.isMocked) {
+          let users = await axios.get('http://localhost:3000/datasMocked.json')
+              .then(reponse => reponse.data.users);
+          return users.filter(user => user.id === userId);
+      }
+  }
+
     async getActivity(userId) {
         if (this.isMocked) {
             let activities = await axios.get('http://localhost:3000/datasMocked.json')
