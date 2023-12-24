@@ -56,7 +56,7 @@ function Dashboard() {
                 <Sidebar/>
                 <div className="section-dashboard">
                     {/* {!dataUser ? ( */}
-                    {!activity ? (
+                    {!user ? (
                         <>
                             <Loader/>
                         </>
