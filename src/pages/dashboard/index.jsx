@@ -7,6 +7,7 @@ import Sidebar from '../../components/sidebar/sidebar';
 import SimpleBarChart from '../../components/recharts/simplebarchart/simplebarchart';
 import LineChartPerso from "../../components/recharts/linechart/linechartperso";
 import RadarChartPerso from "../../components/recharts/radarchart/radarchartperso";
+import PieChartPerso from "../../components/recharts/piechart/piechartperso";
 
 import Loader from '../../components/loader/loader';
 
@@ -65,7 +66,7 @@ function Dashboard() {
               dataService.getPerf(idUserinteger),
             ]);
             setUser(userData);
-            // console.log(userData);
+            console.log(userData);
             setActivity(activityData);
             // console.log(activityData);
             setSessions(sessionData);
@@ -127,6 +128,9 @@ function Dashboard() {
                                         </div>
                                         <div className="zoneChart">
                                             <RadarChartPerso dataPerformances={performances} />
+                                        </div>
+                                        <div className="zoneChart">
+                                            <PieChartPerso dataUser={user} />
                                         </div>
                                     </div>
                                 </div>

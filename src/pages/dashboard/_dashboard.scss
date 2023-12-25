@@ -44,7 +44,19 @@
                         .zoneChart {
                             // background-color: red;
                             width: 31%;height: 36vh;
+                            // width: 300px;height: 300px;
                             margin-top: 5px;
+                            position: relative;
+
+                            .score {
+                                position: absolute;
+                                top: 0;
+                                left: 10px;
+                                margin-top: 5px; 
+                                margin-left: 0;
+                                padding: 0;
+                                font-size: 1.2rem;
+                            }
                         }
                     }
                 }
