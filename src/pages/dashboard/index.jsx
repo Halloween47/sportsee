@@ -6,6 +6,7 @@ import Sidebar from '../../components/sidebar/sidebar';
 
 import SimpleBarChart from '../../components/recharts/simplebarchart/simplebarchart';
 import LineChartPerso from "../../components/recharts/linechart/linechartperso";
+import RadarChartPerso from "../../components/recharts/radarchart/radarchartperso";
 
 import Loader from '../../components/loader/loader';
 
@@ -19,6 +20,7 @@ function Dashboard() {
     let [user, setUser] = useState(null);
     let [activity, setActivity] = useState(null);
     let [sessions, setSessions] = useState(null);
+    let [performances, setPerformances] = useState(null);
 
     let dataService = new DataService();
     
@@ -56,17 +58,20 @@ function Dashboard() {
         const fetchData = async () => {
           try {
             // Utilisation de Promise.all pour effectuer plusieurs appels asynchrones en parallèle
-            const [userData, activityData, sessionData] = await Promise.all([
+            const [userData, activityData, sessionData, perfData] = await Promise.all([
               dataService.getUser(idUserinteger),
               dataService.getActivity(idUserinteger),
               dataService.getSessions(idUserinteger),
+              dataService.getPerf(idUserinteger),
             ]);
             setUser(userData);
-            console.log(userData);
+            // console.log(userData);
             setActivity(activityData);
-            console.log(activityData);
+            // console.log(activityData);
             setSessions(sessionData);
-            console.log(sessionData);
+            // console.log(sessionData);
+            setPerformances(perfData)  
+            console.log(perfData);
       
           } catch (error) {
             console.error("Une erreur s'est produite lors de la récupération des données :", error);
@@ -118,8 +123,10 @@ function Dashboard() {
                                     </div>
                                     <div className="zone-multiGraph">
                                         <div className="zoneChart">
-                                            {/* <LineChartPerso dataSessions={sessions} /> */}
                                             <LineChartPerso dataSession={sessions}  />
+                                        </div>
+                                        <div className="zoneChart">
+                                            <RadarChartPerso dataPerformances={performances} />
                                         </div>
                                     </div>
                                 </div>

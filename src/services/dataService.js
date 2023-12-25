@@ -26,10 +26,18 @@ export class DataService {
     async getSessions(userId) {
       if (this.isMocked) {
           let sessions = await axios.get('http://localhost:3000/datasMocked.json')
-              .then(reponse => reponse.data.sessions);
-console.log(sessions);     
+              .then(reponse => reponse.data.sessions); 
  return sessions.filter(session => session.userId === userId);
       }
+  }
+
+  async getPerf(userId) {
+   if (this.isMocked) {
+      let performances = await axios.get('http://localhost:3000/datasMocked.json')
+      .then(response => response.data.perf);
+      console.log(performances);
+      return performances.filter(performance => performance.userId === userId);
+   }
   }
 
     /* Ton service à pour responsabilité de traiter la donnée

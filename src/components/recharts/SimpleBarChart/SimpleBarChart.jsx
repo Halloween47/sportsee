@@ -34,7 +34,7 @@ const CustomTooltip = ({active, payload}) => {
 };
 
 function SimpleBarChart(props) {
-    console.log(props);
+    // console.log(props);
     let data = props.dataActivity[0].sessions;
     return (
         <ResponsiveContainer width="90%" height="60%"

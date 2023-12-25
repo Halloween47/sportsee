@@ -23,17 +23,17 @@ import { LineChart, Line, XAxis,  Tooltip, Legend, ResponsiveContainer } from 'r
 function LineChartPerso(props) {
   ///////////////////////////////////////
   let data = props.dataSession[0].sessions;
-  console.log(data);
+  // console.log(data);
   ///////////////////////////////////////
   // let data = props.dataSessions.sessions;
   // console.log(data);
   const sessionLengthValues = data.map(entry => entry.sessionLength);
-  console.log(sessionLengthValues);
+  // console.log(sessionLengthValues);
   // let data = [];
   // let sessionLengthValues = "test";
 //////////
-const day = data.map((day) => day.day);
-console.log(day); 
+// const day = data.map((day) => day.day);
+// console.log(day); 
 
 const dataDays = data.map((data) => {
   switch (data.day) {
@@ -57,7 +57,7 @@ const dataDays = data.map((data) => {
       break;
   }   }
 )
-console.log(dataDays);
+// console.log(dataDays);
 //////////
 
     return (
