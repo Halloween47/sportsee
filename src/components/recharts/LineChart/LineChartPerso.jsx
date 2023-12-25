@@ -21,22 +21,57 @@ import { LineChart, Line, XAxis,  Tooltip, Legend, ResponsiveContainer } from 'r
   };
 
 function LineChartPerso(props) {
-  let data = props.dataSessions.sessions;
+  ///////////////////////////////////////
+  let data = props.dataSession[0].sessions;
   console.log(data);
+  ///////////////////////////////////////
+  // let data = props.dataSessions.sessions;
+  // console.log(data);
   const sessionLengthValues = data.map(entry => entry.sessionLength);
   console.log(sessionLengthValues);
+  // let data = [];
+  // let sessionLengthValues = "test";
+//////////
+const day = data.map((day) => day.day);
+console.log(day); 
+
+const dataDays = data.map((data) => {
+  switch (data.day) {
+    case 1:
+      return {...data, day: "L"};
+      case 2:
+      return {...data, day: "M"};
+      case 3:
+      return {...data, day: "M"};
+      case 4:
+      return {...data, day: "J"};
+      case 5:
+      return {...data, day: "V"};
+      case 6:
+      return {...data, day: "S"};
+      case 7:
+      return {...data, day: "D"};
+      
+  
+    default:
+      break;
+  }   }
+)
+console.log(dataDays);
+//////////
+
     return (
         <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#FF0000', borderRadius: '10px' }}>
         
         <LineChart
           width={500}
           height={300}
-          data={data}
+          data={dataDays}
           margin={{
             top: 0,
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 0,
           }}
         >
           <XAxis dataKey="day"axisLine={false} tickLine={false}  tick={{ stroke: 'white', opacity: 0.5 }}/>

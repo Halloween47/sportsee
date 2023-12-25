@@ -3,13 +3,21 @@
     .body-dashboard {
         // background-color: yellow;
         display: flex;
-        width: 100%; height: auto;
+        width: 100%; height: 100%;
+        overflow-y: hidden;
         .section-dashboard {
-            // background-color: orange;
+            background-color: orange;
             width: 100%; height: 100%;
             // padding: 50px 70px;
-            padding: 5% 1% 0% 10%;
+            padding: 13vh 1% 0% 10%;
             position: relative;
+
+            h1 {
+                margin: 0;padding: 0;
+            }
+            p {
+                margin: 0; padding: 0 0 20px 0;
+            }
 
             .section-chart {
                 // background-color: blue;
@@ -22,6 +30,7 @@
                     // background-color: red;
                     width: 70%; height: 100%;
 
+                    
                     .zone-lineChart {
                         // background-color: violet;
                         width: 100%;height: 50%;
@@ -31,10 +40,11 @@
                         width: 100%;height: 50%;
                         display: flex;
                         justify-content: space-between;
-
+                        
                         .zoneChart {
                             // background-color: red;
-                            width: 31%;height: 100%;
+                            width: 31%;height: 36vh;
+                            margin-top: 5px;
                         }
                     }
                 }

@@ -23,6 +23,15 @@ export class DataService {
         }
     }
 
+    async getSessions(userId) {
+      if (this.isMocked) {
+          let sessions = await axios.get('http://localhost:3000/datasMocked.json')
+              .then(reponse => reponse.data.sessions);
+console.log(sessions);     
+ return sessions.filter(session => session.userId === userId);
+      }
+  }
+
     /* Ton service à pour responsabilité de traiter la donnée
 
      chaque fonction doit être de la forme ci dessous

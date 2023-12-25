@@ -34,9 +34,10 @@ const CustomTooltip = ({active, payload}) => {
 };
 
 function SimpleBarChart(props) {
+    console.log(props);
     let data = props.dataActivity[0].sessions;
     return (
-        <ResponsiveContainer width="100%" height="100%"
+        <ResponsiveContainer width="90%" height="60%"
                              style={{backgroundColor: '#FBFBFB', borderRadius: '10px', padding: '50px'}}>
 <Text
     angle={0}
@@ -55,8 +56,8 @@ function SimpleBarChart(props) {
                 data={data}
                 margin={{
                     top: 0,
-                    right: 200,
-                    left: 20,
+                    right: 0,
+                    left: 0,
                     bottom: 0,
                 }}
                 >
