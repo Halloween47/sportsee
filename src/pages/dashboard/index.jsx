@@ -8,8 +8,14 @@ import SimpleBarChart from '../../components/recharts/simplebarchart/simplebarch
 import LineChartPerso from "../../components/recharts/linechart/linechartperso";
 import RadarChartPerso from "../../components/recharts/radarchart/radarchartperso";
 import PieChartPerso from "../../components/recharts/piechart/piechartperso";
+import KeyData from "../../components/recharts/keydata/keydata";
 
 import Loader from '../../components/loader/loader';
+
+import imgCalorie from "../../assets/calories-icon.svg";
+import imgProteine from "../../assets/protein-icon.svg";
+import imgLipides from "../../assets/carbs-icon.svg";
+import imgGlucides from "../../assets/fat-icon.svg";
 
 import {DataService} from '../../services/dataService'; 
 
@@ -83,6 +89,7 @@ function Dashboard() {
     //   }, [dataService, idUserinteger, user, activity, sessions]);
       }, []);
       
+      
     ///////////////////////////////////////////////////////////
     //  */
 
@@ -100,7 +107,9 @@ function Dashboard() {
         //     dataService.getSessions(idUserinteger).then(data => setSessions(data));
         //     console.log(sessions);
         // },[idUserinteger, dataService]);
-        
+        console.log(user[0].keyData.calorieCount);
+        // let keyData = user.map((element) => element.keyData);
+        // console.log(keyData);
     return (
         <div className='page-dashboard'>
             <Header/>
@@ -132,6 +141,20 @@ function Dashboard() {
                                         <div className="zoneChart">
                                             <PieChartPerso dataUser={user} />
                                         </div>
+                                    </div>
+                                </div>
+                                <div className="zone-details">
+                                    <div className="calories">
+                                        <KeyData calories={user[0].keyData.calorieCount} srcImg={imgCalorie} valeur="calories" unit=" kCal" />
+                                    </div>
+                                    <div className="calories">
+                                        <KeyData calories={user[0].keyData.proteinCount} srcImg={imgProteine} valeur="proteines" unit=" g" />
+                                    </div>
+                                    <div className="calories">
+                                        <KeyData calories={user[0].keyData.carbohydrateCount} srcImg={imgLipides} valeur="glucides" unit=" g" />
+                                    </div>
+                                    <div className="calories">
+                                        <KeyData calories={user[0].keyData.lipidCount} srcImg={imgGlucides} valeur="Lipides" unit=" g" />
                                     </div>
                                 </div>
                             </div>
