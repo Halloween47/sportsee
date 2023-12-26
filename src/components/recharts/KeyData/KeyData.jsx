@@ -1,5 +1,4 @@
 function KeyData(props) {
-  console.log(props);
     return (
       <>
         <img src={props.srcImg} alt="calories" />

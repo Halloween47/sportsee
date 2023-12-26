@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import {DataService} from '../../services/dataService';
 
 
 function SwitchButton() {
     const [isChecked, setChecked] = useState(false);
+    const dataService = new DataService();
+    // console.log(dataService.isMocked);
 
 
     const handleToggle = () => {
@@ -10,8 +13,12 @@ function SwitchButton() {
 
         if (!isChecked) {
           console.log('Données API');
+          dataService.isMocked = false;
+          console.log(dataService.isMocked);
         } else {
           console.log('Donnée Mocké');
+          dataService.isMocked = true;
+          console.log(dataService.isMocked);
         }
       };
 
@@ -28,3 +35,4 @@ function SwitchButton() {
 }
 
 export default SwitchButton;
+
