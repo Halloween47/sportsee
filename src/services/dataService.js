@@ -4,12 +4,13 @@ import axios from "axios";
 export class DataService {
 
     constructor() {
-        this.isMocked = false;
+      this.isMocked = true;
     }
 
-    async getUser(userId, url) {
+    async getUser(userId, url, etatBouton) {
 
-      if (this.isMocked) {
+      // if (this.isMocked) {
+      if (etatBouton === "Data Mocked") {
           console.log("test Mocked Users")
           let users = await axios.get(url + "/datasMocked.json")
               .then(reponse => reponse.data.users);
@@ -26,8 +27,8 @@ export class DataService {
       }
   }
 
-    async getActivity(userId, url) {
-        if (this.isMocked) {
+    async getActivity(userId, url, etatBouton) {
+        if (etatBouton === "Data Mocked") {
             console.log("test Mocked Activity");
             let activities = await axios.get(url + "/datasMocked.json")
                 .then(reponse => reponse.data.activity);
@@ -43,8 +44,8 @@ export class DataService {
         } 
     }
 
-    async getSessions(userId, url) {
-      if (this.isMocked) {
+    async getSessions(userId, url, etatBouton) {
+      if (etatBouton === "Data Mocked") {
         console.log("test Mocked Sessions")
           let sessions = await axios.get(url + "/datasMocked.json")
               .then(reponse => reponse.data.sessions); 
@@ -60,8 +61,8 @@ export class DataService {
       } 
   }
 
-  async getPerf(userId, url) {
-   if (this.isMocked) {
+  async getPerf(userId, url, etatBouton) {
+   if (etatBouton === "Data Mocked") {
     console.log("test Mocked Performances")
       let performances = await axios.get(url + "/datasMocked.json")
       .then(response => response.data.perf);

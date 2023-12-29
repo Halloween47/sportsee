@@ -1,3 +1,4 @@
+// import {useLocation} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
 
@@ -19,7 +20,26 @@ import imgGlucides from "../../assets/fat-icon.svg";
 
 import {DataService} from '../../services/dataService'; 
 
+// import { useButtonState } from "../../components/ButtonStateContext";
+
 function Dashboard() {
+    ///////////////////////////////////////////////////////
+//     const { etatBouton } = useButtonState();
+//     console.log(etatBouton);
+//     const location = useLocation();
+//   const { state } = location;
+//   const { pathname } = location;
+//   console.log(location);
+//   console.log(state);
+//   console.log(pathname);
+    ///////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////
+    const [etatBouton, setEtatBouton] = useState(() => {
+        // Lire l'état du bouton depuis le sessionStorage ou localStorage
+        return sessionStorage.getItem("etatBouton") || "Data Mocked";
+      });
+      console.log(etatBouton);
+    ///////////////////////////////////////////////////////
 
     let {idUser} = useParams();
     let idUserinteger = parseInt(idUser, 10);
@@ -37,10 +57,10 @@ function Dashboard() {
           try {
             // Utilisation de Promise.all pour effectuer plusieurs appels asynchrones en parallèle
             const [userData, activityData, sessionData, perfData] = await Promise.all([
-              dataService.getUser(idUserinteger,url),
-              dataService.getActivity(idUserinteger,url),
-              dataService.getSessions(idUserinteger,url),
-              dataService.getPerf(idUserinteger,url),
+              dataService.getUser(idUserinteger,url, etatBouton),
+              dataService.getActivity(idUserinteger,url, etatBouton),
+              dataService.getSessions(idUserinteger,url, etatBouton),
+              dataService.getPerf(idUserinteger,url, etatBouton),
             ]);
             setUser(userData);
             // console.log(userData);
@@ -50,7 +70,15 @@ function Dashboard() {
             // console.log(sessionData);
             setPerformances(perfData)  
             // console.log(perfData);
-            // console.log(dataService.isMocked);
+            const mockedOrNot = dataService.isMocked;
+            console.log(mockedOrNot);
+            if (etatBouton === 'API') {
+                dataService.isMocked = false;
+                console.log('etats isMocked à false');
+            } else {
+                dataService.isMocked = true;
+                console.log('etats isMocked à true');
+            }
       
           } catch (error) {
             console.error("Une erreur s'est produite lors de la récupération des données :", error);
@@ -59,12 +87,11 @@ function Dashboard() {
       
         fetchData();
     //   }, [dataService, idUserinteger, user, activity, sessions]);
+    // eslint-disable-next-line
       }, []);
 
 
 
-    {/* {!user || !activity || !sessions || !performances ? ( */}
-    {/* {!user || !sessions ? ( */}
     
     return (
         <div className='page-dashboard'>
@@ -79,7 +106,6 @@ function Dashboard() {
                     ) : (
                         <>
                             <h1>Bonjour {user[0].userInfos.firstName}</h1>
-                            {/* <h1>Bonjour toto</h1> */}
                             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                             <div className="section-chart">
                                 <div className="zone-chart">
