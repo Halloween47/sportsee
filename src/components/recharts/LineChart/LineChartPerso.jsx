@@ -1,5 +1,6 @@
 import React from 'react';
-import { LineChart, Line, XAxis,  Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis,  Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts';
+
 
   const renderLegend = () => {
     return (
@@ -11,7 +12,7 @@ import { LineChart, Line, XAxis,  Tooltip, Legend, ResponsiveContainer } from 'r
       const sessionLength = payload[0].value;
   
       return (
-        <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '5px' }}>
+        <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '10px', borderRadius: '5px', margin:'30px' }}>
           <p>{`${sessionLength} min`}</p>
         </div>
       );
@@ -60,6 +61,19 @@ const dataDays = data.map((data) => {
 // console.log(dataDays);
 //////////
 
+function CustomCursor({ points }) {
+  console.log('df', points)
+  return (
+    <Rectangle
+      fill="black"
+      opacity={0.1}
+      x={points[0].x}
+      width={1000}
+      height={300}
+    />
+  )
+}
+
     return (
         <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#FF0000', borderRadius: '10px' }}>
         
@@ -76,7 +90,8 @@ const dataDays = data.map((data) => {
         >
           <XAxis dataKey="day"axisLine={false} tickLine={false}  tick={{ stroke: 'white', opacity: 0.5 }}/>
           {/* <Tooltip content={sessionLength} /> */}
-          <Tooltip content={<CustomTooltip sessionLengthValues={sessionLengthValues} />} />
+          {/* <Tooltip content={<CustomTooltip sessionLengthValues={sessionLengthValues} />} cursor={{ stroke: 'black', strokeWidth: 1000 , strokeOpacity: 1, height: 100 }} /> */}
+          <Tooltip content={<CustomTooltip sessionLengthValues={sessionLengthValues} />} cursor={<CustomCursor />} />
 
           <Legend align='left' verticalAlign='top' content={renderLegend}  wrapperStyle={{ color: '#FFFFFF', opacity: 0.5, width: '300px' }}/>
           <Line type="monotone" dataKey="sessionLength" stroke="#fff"  strokeWidth={2} activeDot={{ r: 8 }} dot={false} />
