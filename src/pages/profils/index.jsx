@@ -45,7 +45,7 @@ function Profils() {
                 <Sidebar />
                 <div className="selection">
                     <div className="switchbutton">
-                        <button id='switchButton' onClick={toggleOnOff}>
+                        <button id='switchButton' className="toggleButton" onClick={toggleOnOff}>
                             {etatBouton === 'Data Mocked' ? 'Data Mocked' : 'API'}
                         </button>
                     </div>

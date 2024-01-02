@@ -105,7 +105,7 @@ function Dashboard() {
                         </>
                     ) : (
                         <>
-                            <h1>Bonjour {user[0].userInfos.firstName}</h1>
+                            <h1>Bonjour <span>{user[0].userInfos.firstName}</span></h1>
                             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                             <div className="section-chart">
                                 <div className="zone-chart">

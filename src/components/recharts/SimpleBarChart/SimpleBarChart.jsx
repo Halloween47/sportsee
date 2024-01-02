@@ -46,7 +46,7 @@ function SimpleBarChart(props) {
     // console.log(props);
     let data = props.dataActivity[0].sessions;
     return (
-        <ResponsiveContainer width="90%" height="60%"
+        <ResponsiveContainer width="90%" height="70%"
                              style={{backgroundColor: '#FBFBFB', borderRadius: '10px', padding: '50px'}}>
 <Text
     angle={0}
@@ -64,7 +64,7 @@ function SimpleBarChart(props) {
                 height={300}
                 data={data}
                 margin={{
-                    top: 0,
+                    top: -20,
                     right: 0,
                     left: 0,
                     bottom: 0,
@@ -72,7 +72,7 @@ function SimpleBarChart(props) {
                 >
 
                 <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#ccc"/>
-                <XAxis dataKey="day" />
+                <XAxis dataKey="day"  tickLine={false} />
                 <YAxis orientation='right'/>
                 <Tooltip content={<CustomTooltip/>}/>
                 <Legend align="right" verticalAlign="top" height={50}/>

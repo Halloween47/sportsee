@@ -24,7 +24,7 @@ function PieChartPerso(props) {
     };
 
     return (
-        <ResponsiveContainer width="100%" height="100%"
+        <ResponsiveContainer width="90%" height="90%"
                              style={{backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "0px"}}>
             <h2 className='score'>Scores</h2>
             <PieChart width={400} height={400}>

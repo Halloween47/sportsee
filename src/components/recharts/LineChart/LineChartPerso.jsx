@@ -75,7 +75,7 @@ function CustomCursor({ points }) {
 }
 
     return (
-        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#FF0000', borderRadius: '10px' }}>
+        <ResponsiveContainer width="90%" height="90%" style={{ backgroundColor: '#FF0000', borderRadius: '10px' }}>
         
         <LineChart
           width={500}

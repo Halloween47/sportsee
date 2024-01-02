@@ -16,8 +16,8 @@ function RadarChartPerso(props) {
     });
 
     return (
-        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px' }}>
-            <RadarChart outerRadius={100} width={730} height={250} data={newArrayData} >
+        <ResponsiveContainer width="90%" height="90%" style={{ backgroundColor: '#282D30', borderRadius: '10px' }}>
+            <RadarChart outerRadius={90} width={30} height={250} data={newArrayData} >
                 <PolarGrid radialLines={false} />
                 <PolarAngleAxis dataKey="name" tick={{ opacity: 1,fontWeight: 'light',fill: '#fff',fontSize: 11 }}   />
                 
