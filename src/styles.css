@@ -1,33 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-20px);
-  }
-  60% {
-    transform: translateY(-10px);
-  }
-}
 .profils {
+  background-color: blue;
   width: 100%;
   height: 100vh;
 }
 .profils .body-profils {
+  background-color: red;
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  position: relative;
 }
 .profils .body-profils .selection {
-  width: 90vw;
-  height: 100vh;
+  position: relative;
+  background-color: orange;
+  width: 100vw;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .profils .body-profils .selection .toggleButton {
+  width: 150px;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #3498db;
@@ -35,7 +29,6 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  animation: bounce 1s infinite;
   transition: background-color 0.3s ease;
 }
 .profils .body-profils .selection .toggleButton:hover {
@@ -74,10 +67,9 @@
   overflow-y: hidden;
 }
 .page-dashboard .body-dashboard .section-dashboard {
-  width: 100%;
+  width: 95vw;
   height: 100%;
-  padding: 13vh 1% 0% 10%;
-  position: relative;
+  padding: 2%;
 }
 .page-dashboard .body-dashboard .section-dashboard h1 {
   margin: 0;
@@ -92,67 +84,76 @@
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart {
   width: 100%;
-  height: auto;
-  display: flex;
-}
-.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart {
-  width: 70%;
-  height: 100vh;
-}
-.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-lineChart {
-  width: 100%;
-  height: 40vh;
-}
-.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph {
-  width: 100%;
-  height: 40vh;
+  height: 80vh;
   display: flex;
   justify-content: space-between;
 }
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-lineChart {
+  width: 100%;
+  height: 50%;
+}
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph .zoneChart {
-  width: 31%;
-  height: 36vh;
-  margin-top: 0px;
+  width: 32%;
+  height: 100%;
   position: relative;
+  aspect-ratio: 1;
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph .zoneChart .score {
   position: absolute;
   top: 0;
   left: 10px;
-  margin-top: 5px;
+  margin-top: 9px;
   margin-left: 0;
   padding: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph .zoneChart #score {
   font-weight: 900;
   font-size: 2rem;
 }
+.page-dashboard .body-dashboard .section-dashboard .section-chart .zone-chart .zone-multiGraph .zoneChart #scoreTexte {
+  font-size: 1.3rem;
+}
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details {
-  background-color: white;
   width: 20%;
-  height: 99%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  margin-left: 2%;
+  margin-left: 0%;
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories {
   background-color: #FBFBFB;
-  width: 85%;
-  height: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  width: 70%;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px !important;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories img {
   color: white;
-  width: 25%;
+  width: 30%;
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories .calories-infos {
   width: 50%;
@@ -161,15 +162,15 @@
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories .calories-infos p {
   margin: 0;
   padding: 0;
+  font-size: 0.8rem;
 }
 .page-dashboard .body-dashboard .section-dashboard .section-chart .zone-details .calories .calories-infos p:first-child {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   font-weight: 900;
 }
 
 header {
   background-color: #000;
-  position: fixed;
   z-index: 2;
   width: 100%;
   height: auto;
@@ -204,19 +205,20 @@ header nav ul li a {
 
 .sidebar {
   background-color: black;
-  position: fixed;
   width: 5vw;
   height: 100%;
-  padding: 20px;
+  padding: 0px 20px 0px 20px;
   display: flex;
   align-items: center;
+  z-index: 4;
 }
 .sidebar .sidebar_icons {
-  width: 90%;
+  width: 80%;
   height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .sidebar .sidebar_icons img {
   width: 80%;
@@ -226,8 +228,7 @@ header nav ul li a {
 .testRechart {
   width: 80%;
   height: 50vh;
-  margin-top: 90px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .lineChartPerso {
@@ -261,8 +262,8 @@ header nav ul li a {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 15%;
-  left: 10vw;
+  top: 5%;
+  left: 5%;
 }
 
 .onoffswitch {

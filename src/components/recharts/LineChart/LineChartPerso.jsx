@@ -4,7 +4,7 @@ import { LineChart, Line, XAxis,  Tooltip, Legend, ResponsiveContainer, Rectangl
 
   const renderLegend = () => {
     return (
-        <h2>Durée moyenne des sessions</h2>
+        <h2>Durée moyenne des <br/>sessions</h2>
     );
   }
   const CustomTooltip = ({ active, payload, label, sessionLengthValues }) => {
@@ -75,25 +75,23 @@ function CustomCursor({ points }) {
 }
 
     return (
-        <ResponsiveContainer width="90%" height="90%" style={{ backgroundColor: '#FF0000', borderRadius: '10px' }}>
+        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#FF0000', borderRadius: '10px', position: 'absolute' }}>
         
         <LineChart
-          width={500}
-          height={300}
           data={dataDays}
           margin={{
             top: 0,
-            right: 30,
-            left: 20,
+            right: 10,
+            left: 10,
             bottom: 0,
           }}
         >
-          <XAxis dataKey="day"axisLine={false} tickLine={false}  tick={{ stroke: 'white', opacity: 0.5 }}/>
+          <XAxis dataKey="day"axisLine={false} tickLine={false} tick={{ stroke: 'white', opacity: 0.5 }}/>
           {/* <Tooltip content={sessionLength} /> */}
           {/* <Tooltip content={<CustomTooltip sessionLengthValues={sessionLengthValues} />} cursor={{ stroke: 'black', strokeWidth: 1000 , strokeOpacity: 1, height: 100 }} /> */}
           <Tooltip content={<CustomTooltip sessionLengthValues={sessionLengthValues} />} cursor={<CustomCursor />} />
 
-          <Legend align='left' verticalAlign='top' content={renderLegend}  wrapperStyle={{ color: '#FFFFFF', opacity: 0.5, width: '300px' }}/>
+          <Legend align='left' verticalAlign='top' content={renderLegend}  wrapperStyle={{ color: '#FFFFFF', opacity: 0.5, width: '90%', fontSize: '0.8rem', margin: '0px', padding: '0px' }}/>
           <Line type="monotone" dataKey="sessionLength" stroke="#fff"  strokeWidth={2} activeDot={{ r: 8 }} dot={false} />
         </LineChart>
       </ResponsiveContainer>

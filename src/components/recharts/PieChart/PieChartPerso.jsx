@@ -18,22 +18,23 @@ function PieChartPerso(props) {
         return (
             <g>
                 <text id="score" x={cx} y={cy - 10} textAnchor="middle">{value1}%</text>
-                <text x={cx} y={cy + 15} textAnchor="middle">{value2}</text>
+                <text id="scoreTexte" x={cx} y={cy + 15} textAnchor="middle">{value2}</text>
             </g>
         );
     };
 
     return (
-        <ResponsiveContainer width="90%" height="90%"
-                             style={{backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "0px"}}>
+        <ResponsiveContainer width="100%" height="100%"
+                            //  style={{backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "0px"}}>
+                             style={{backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "0px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <h2 className='score'>Scores</h2>
-            <PieChart width={400} height={400}>
+            <PieChart style={{borderRadius: '10px', width: '70%', height: '70%'}}>
                 <Pie
                     // data={dataTab}
                     data={data}
                     dataKey={dataKeyToUse}
-                    cx={140}
-                    cy={140}
+                    // cx={140}
+                    // cy={140}
                     innerRadius={85}
                     outerRadius={100}
                     fill="#FF0000"

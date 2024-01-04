@@ -16,13 +16,14 @@ function RadarChartPerso(props) {
     });
 
     return (
-        <ResponsiveContainer width="90%" height="90%" style={{ backgroundColor: '#282D30', borderRadius: '10px' }}>
-            <RadarChart outerRadius={90} width={30} height={250} data={newArrayData} >
-                <PolarGrid radialLines={false} />
+        // <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px', padding: '20px' }}>
+        <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px', padding: '0px' }}>
+            {/* <RadarChart outerRadius={60}  innerRadius={0} data={newArrayData}  style={{ backgroundColor: 'blue', borderRadius: '10px', padding: '0px' }} > */}
+            <RadarChart innerRadius={0} data={newArrayData}  style={{ borderRadius: '10px', padding: '0px' }} >
+                <PolarGrid radialLines={false} style={{ backgroundColor: 'violet'}}  />
                 <PolarAngleAxis dataKey="name" tick={{ opacity: 1,fontWeight: 'light',fill: '#fff',fontSize: 11 }}   />
                 
-                <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6} />
-                {/* <Legend /> */}
+                <Radar dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.6}  style={{ backgroundColor: 'violet'}} />
             </RadarChart>
         </ResponsiveContainer>
     )

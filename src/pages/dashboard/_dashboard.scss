@@ -7,11 +7,11 @@
         overflow-y: hidden;
         .section-dashboard {
             // background-color: orange;
-            width: 100%; height: 100%;
+            // position: relative;
+            width: 95vw; height: 100%;
             // padding: 50px 70px;
-            padding: 13vh 1% 0% 10%;
-            position: relative;
-
+            padding: 2%;
+            
             h1 {
                 margin: 0;padding: 0 0 15px 0;
                 span {
@@ -21,96 +21,113 @@
             p {
                 margin: 0; padding: 0 0 20px 0;
             }
-
+            
             .section-chart {
                 // background-color: blue;
-
-                // width: 100%; height: 75vh;
-                width: 100%; height: auto;
+                
+                width: 100%; height: 80vh;
+                // width: 100%; height: auto;
                 display: flex;
-
+                justify-content: space-between;
+                
                 .zone-chart {
                     // background-color: red;
-                    width: 70%; height: 100vh;
-
+                    width: 80%; height: 100%;
+                    // width: 70%; height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    
                     
                     .zone-lineChart {
                         // background-color: violet;
-                        width: 100%;height: 40vh;
+                        // width: 100%;height: 30vh;
+                        width: 100%;height: 50%;
                     }
                     .zone-multiGraph {
                         // background-color: orange;
-                        width: 100%;height: 40vh;
+                        width: 100%;
+                        height: 40%;
                         display: flex;
                         justify-content: space-between;
+                        margin-top: 50px;
                         
                         .zoneChart {
-                            // background-color: red;
-                            width: 31%;height: 36vh;
-                            // width: 300px;height: 300px;
-                            margin-top: 0px;
+                            // background-color: violet;
+                            width: 32%;
+                            height: 100%;
                             position: relative;
+                            // margin: 5px;
+                            // flex: 1;
+                            aspect-ratio: 1;
 
                             .score {
                                 position: absolute;
                                 top: 0;
                                 left: 10px;
-                                margin-top: 5px; 
+                                margin-top: 9px; 
                                 margin-left: 0;
                                 padding: 0;
-                                font-size: 1.2rem;
+                                font-size: 1rem;
                             }
                             #score {
                                 font-weight: 900;
                                 font-size: 2rem;
+                            }
+                            #scoreTexte {
+                                font-size: 1.3rem;
                             }
                         }
                     }
                 }
                 .zone-details {
                     // background-color: rgb(95, 14, 14);
-                    background-color: white;
-                    width: 20%; height: 99%;
+                    width: 20%; height: 100%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: space-between;
                     border-radius: 10px;
-
-                    margin-left: 2%;
+                    
+                    margin-left: 0%;
                     
                     .calories {
                         // background-color: #FBFBFB;
                         background-color: #FBFBFB;
                         // background-color: green;
-                        width: 85%;
-                        height: 100px;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-                        margin-left: 20px;
-    
+                        width: 70%;
+                        // height: 100px;
+                        height: auto;
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        margin-left: 0px !important;
+                        padding: 20px;
+                        
                         display: flex;
                         justify-content: center;
                         align-items: center;
-    
+                        border-radius: 5px;
+                        
                         img {
                             color: white;
-                            width: 25%;
+                            width: 30%;
                         }
                         .calories-infos {
                             // background-color: red;
                             width: 50%;
                             margin-left: 20px;
-
+                            
                             p {
                                 margin: 0;padding: 0;
+                                font-size: .8rem;
                             }
                             p:first-child {
-                                font-size: 1.5rem;
+                                font-size: 0.8rem;
                                 font-weight: 900;
                             }
                         }
-
+                        
                     }
                 }
             }

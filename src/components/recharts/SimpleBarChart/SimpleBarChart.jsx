@@ -46,8 +46,9 @@ function SimpleBarChart(props) {
     // console.log(props);
     let data = props.dataActivity[0].sessions;
     return (
-        <ResponsiveContainer width="90%" height="70%"
-                             style={{backgroundColor: '#FBFBFB', borderRadius: '10px', padding: '50px'}}>
+        <ResponsiveContainer width="100%" height="80%"
+                            //  style={{backgroundColor: '#FBFBFB', borderRadius: '10px', padding: '50px'}}>
+                             style={{backgroundColor: '#FBFBFB', borderRadius: '10px', padding: '20px 0px 40px 0px'}}>
 <Text
     angle={0}
     content="Activité quotidienne"
@@ -55,30 +56,28 @@ function SimpleBarChart(props) {
     maxLines={3}
     textAnchor="middle"
     verticalAnchor="end"
-    width={200}
+    style={{ margin: '30px 30px 0px 30px' }}
   >
     Activité quotidienne
   </Text>
                 <BarChart
-                width={500}
-                height={300}
                 data={data}
                 margin={{
                     top: -20,
-                    right: 0,
-                    left: 0,
+                    right: 20,
+                    left: 50,
                     bottom: 0,
                 }}
+                barCategoryGap={30}
                 >
 
                 <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#ccc"/>
-                <XAxis dataKey="day"  tickLine={false} />
+                <XAxis dataKey="day" tickLine={false} fontSize={11}/>
                 <YAxis orientation='right'/>
                 <Tooltip content={<CustomTooltip/>}/>
                 <Legend align="right" verticalAlign="top" height={50}/>
                 <Bar name="Poids (kg)" dataKey="kilogram" fill="#282D30" legendType="circle"
-                     activeBar={<Rectangle fill="pink" stroke="blue"/>} radius={[20, 20, 0, 0]} maxBarSize={10}
-                     barC={20}/>
+                     activeBar={<Rectangle fill="pink" stroke="blue"/>} radius={[20, 20, 0, 0]} maxBarSize={10} />
                 <Bar name="Calories brûlées (kCal)" dataKey={"calories"} fill="#E60000" legendType="circle"
                      activeBar={<Rectangle fill="gold" stroke="purple"/>} radius={[20, 20, 0, 0]} maxBarSize={10}/>
             </BarChart>

@@ -125,13 +125,13 @@ function Dashboard() {
                                 </div>
                                 <div className="zone-details">
                                     <div className="calories">
-                                        <KeyData calories={user[0].keyData.calorieCount} srcImg={imgCalorie} valeur="calories" unit=" kCal" />
+                                        <KeyData calories={user[0].keyData.calorieCount} srcImg={imgCalorie} valeur="Calories" unit=" kCal" />
                                     </div>
                                     <div className="calories">
-                                        <KeyData calories={user[0].keyData.proteinCount} srcImg={imgProteine} valeur="proteines" unit=" g" />
+                                        <KeyData calories={user[0].keyData.proteinCount} srcImg={imgProteine} valeur="Proteines" unit=" g" />
                                     </div>
                                     <div className="calories">
-                                        <KeyData calories={user[0].keyData.carbohydrateCount} srcImg={imgLipides} valeur="glucides" unit=" g" />
+                                        <KeyData calories={user[0].keyData.carbohydrateCount} srcImg={imgLipides} valeur="Glucides" unit=" g" />
                                     </div>
                                     <div className="calories">
                                         <KeyData calories={user[0].keyData.lipidCount} srcImg={imgGlucides} valeur="Lipides" unit=" g" />
