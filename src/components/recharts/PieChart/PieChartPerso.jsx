@@ -7,7 +7,6 @@ function PieChartPerso(props) {
     if (data[0].todayScore) {
         todayScore = data[0].todayScore * 100;
     } else {
-        // todayScore = data[0].score * 100 + "% de votre objectif";
         todayScore = data[0].score * 100;
     }
     let resultatAngleTodayScore = parseInt(todayScore) * 360 / 100;
@@ -25,25 +24,19 @@ function PieChartPerso(props) {
 
     return (
         <ResponsiveContainer width="100%" height="100%"
-                            //  style={{backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "0px"}}>
                              style={{backgroundColor: '#FBFBFB', borderRadius: '10px', paddingLeft: "0px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <h2 className='score'>Scores</h2>
             <PieChart style={{borderRadius: '10px', width: '70%', height: '70%'}}>
                 <Pie
-                    // data={dataTab}
                     data={data}
                     dataKey={dataKeyToUse}
-                    // cx={140}
-                    // cy={140}
                     innerRadius={85}
                     outerRadius={100}
                     fill="#FF0000"
                     startAngle={90}
                     endAngle={resultatAngleTodayScore + 90}
                     cornerRadius={10}
-                    // isAnimationActive={true}
                 >
-                    {/* <Label value={todayScore} position="center"/> */}
                     <Label content={<CustomLabel value1={todayScore.toFixed(0)} value2="de votre objectif" />} position="center" />           
                 </Pie>
             </PieChart>

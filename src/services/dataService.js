@@ -23,9 +23,7 @@ export class DataService {
       console.log("test Backend Users")
       let users = await axios.get(`http://localhost:3000/user/${userId}`)
         .then(reponse => reponse.data);
-      // console.log(users.data);
       let testTableauData = [users.data];
-      // console.log(testTableauData);
       return testTableauData.filter(user => user.id === userId);
     }
   }
@@ -42,7 +40,6 @@ export class DataService {
       let activities = await axios.get(`http://localhost:3000/user/${userId}/activity`)
         .then(reponse => reponse.data);
       let testTableauData = [activities.data];
-      // console.log(testTableauData);
       return testTableauData.filter(activity => activity.userId === userId);
     }
   }
@@ -59,7 +56,6 @@ export class DataService {
       let sessions = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`)
         .then(reponse => reponse.data);
       let testTableauData = [sessions.data];
-      // console.log(testTableauData);
       return testTableauData.filter(session => session.userId === userId);
     }
   }
@@ -69,7 +65,6 @@ export class DataService {
       console.log("test Mocked Performances")
       let performances = await axios.get("http://localhost:3001/datasMocked.json")
         .then(response => response.data.perf);
-      // console.log(performances);
       return performances.filter(performance => performance.userId === userId);
     }
     else {
@@ -77,7 +72,6 @@ export class DataService {
       let performances = await axios.get(`http://localhost:3000/user/${userId}/performance`)
         .then(reponse => reponse.data);
       let testTableauData = [performances.data];
-      // console.log(testTableauData);
       return testTableauData.filter(performance => performance.userId === userId);
     }
   }

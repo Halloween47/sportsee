@@ -7,7 +7,6 @@ function RadarChartPerso(props) {
     const datasValuesKind = data.map(performance => performance.data);
     const values = datasValuesKind[0].map(data => data.value);
     const prepaKind = kind[0];
-    // const tabName = Object.values(prepaKind);
     var newArrayData = Object.values(prepaKind).map(function(value, index) {
         return {
             name: value,
@@ -16,9 +15,7 @@ function RadarChartPerso(props) {
     });
 
     return (
-        // <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px', padding: '20px' }}>
         <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30', borderRadius: '10px', padding: '0px' }}>
-            {/* <RadarChart outerRadius={60}  innerRadius={0} data={newArrayData}  style={{ backgroundColor: 'blue', borderRadius: '10px', padding: '0px' }} > */}
             <RadarChart innerRadius={0} data={newArrayData}  style={{ borderRadius: '10px', padding: '0px' }} >
                 <PolarGrid radialLines={false} style={{ backgroundColor: 'violet'}}  />
                 <PolarAngleAxis dataKey="name" tick={{ opacity: 1,fontWeight: 'light',fill: '#fff',fontSize: 11 }}   />

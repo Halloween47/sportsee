@@ -4,7 +4,6 @@ const ButtonStateContext = createContext();
 
 export const ButtonStateProvider = ({ children }) => {
   const [etatBouton, setEtatBouton] = useState("Data Mocked");
-  console.log(etatBouton);
 
   const toggleOnOff = () => {
     setEtatBouton((prevState) => (prevState === "API" ? "Data Mocked" : "API"));

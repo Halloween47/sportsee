@@ -1,4 +1,3 @@
-// import {useLocation} from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -20,26 +19,11 @@ import imgGlucides from "../../assets/fat-icon.svg";
 
 import { DataService } from '../../services/dataService';
 
-// import { useButtonState } from "../../components/ButtonStateContext";
 
 function Dashboard() {
-    ///////////////////////////////////////////////////////
-    //     const { etatBouton } = useButtonState();
-    //     console.log(etatBouton);
-    //     const location = useLocation();
-    //   const { state } = location;
-    //   const { pathname } = location;
-    //   console.log(location);
-    //   console.log(state);
-    //   console.log(pathname);
-    ///////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////
     const [etatBouton, setEtatBouton] = useState(() => {
-        // Lire l'état du bouton depuis le sessionStorage ou localStorage
         return sessionStorage.getItem("etatBouton") || "Data Mocked";
     });
-    console.log(etatBouton);
-    ///////////////////////////////////////////////////////
 
     let { idUser } = useParams();
     let idUserinteger = parseInt(idUser, 10);
@@ -54,7 +38,6 @@ function Dashboard() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Utilisation de Promise.all pour effectuer plusieurs appels asynchrones en parallèle
                 const [userData, activityData, sessionData, perfData] = await Promise.all([
                     dataService.getUser(idUserinteger),
                     dataService.getActivity(idUserinteger),
@@ -62,21 +45,15 @@ function Dashboard() {
                     dataService.getPerf(idUserinteger),
                 ]);
                 setUser(userData);
-                // console.log(userData);
                 setActivity(activityData);
-                // console.log(activityData);
                 setSessions(sessionData);
-                // console.log(sessionData);
                 setPerformances(perfData)
-                // console.log(perfData);
                 const mockedOrNot = dataService.isMocked;
                 console.log(mockedOrNot);
                 if (etatBouton === 'API') {
                     dataService.isMocked = false;
-                    console.log('etats isMocked à false');
                 } else {
                     dataService.isMocked = true;
-                    console.log('etats isMocked à true');
                 }
 
             } catch (error) {
@@ -85,7 +62,6 @@ function Dashboard() {
         };
 
         fetchData();
-        //   }, [dataService, idUserinteger, user, activity, sessions]);
         // eslint-disable-next-line
     }, []);
 
